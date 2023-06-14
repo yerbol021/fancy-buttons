@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-function TextRepeaterButton() {
-  const [repetitions, setRepetitions] = useState(0);
+function TextRepeaterButton(props) {
+  const [repetitions, setRepetitions] = useState(1);
 
   const textArray = [];
   for (let i = 0; i < repetitions; i++) {
@@ -11,10 +11,10 @@ function TextRepeaterButton() {
 
   const handleClick = () => {
     setRepetitions(repetitions + 1);
-  };
+  }
 
   return (
-    <button className="TextRepeaterButton" onClick={handleClick}>
+    <button onClick={handleClick} className="TextRepeaterButton">
       {textArray}
     </button>
   );

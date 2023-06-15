@@ -4,12 +4,8 @@ import { useState } from "react";
 function LightSwitchButton(props) {
   const { light, setLight } = props;
 
-  const toggleLight = () => {
-    setLight(prevLight => (prevLight === 'on' ? 'off' : 'on'));
-  };
-
   return (
-    <button className="LightSwitchButton" onClick={toggleLight}>
+    <button onClick={setLight} className="LightSwitchButton">
       {light === 'on' && <span><i>💡</i> I'm on!</span>}
       {light === 'off' && <span className="off"><i>💡</i> I'm off!</span>}
     </button>

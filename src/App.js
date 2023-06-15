@@ -6,8 +6,11 @@ import TextRepeaterButton from './components/fancy-buttons/TextRepeaterButton';
 import { useState } from "react";
 
 function App() {
+  
   const [light, setLight] = useState('off');
   const dark = (light === 'off') ? 'dark' : '';
+  const switchLight = () => setLight((light === "on") ? "off" : "on");
+
   return (
     <div className={`App`}>
       <div className={`App ${dark}`}>    
@@ -16,7 +19,7 @@ function App() {
       <section>
         <AngryButton />
         <CounterButton />
-        <LightSwitchButton light={light} setLight={setLight}/>
+        <LightSwitchButton light={light} setLight={switchLight}/>
         <TextRepeaterButton />
       </section>
       </div>
